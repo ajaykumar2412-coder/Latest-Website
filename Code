@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajay Kumar - Performance Marketing Portfolio</title>
+    <base target="_self">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        electric: {
+                            400: '#8a2be2',
+                            500: '#7b2cbf',
+                            600: '#6a27a8'
+                        },
+                        mustard: {
+                            400: '#ffdb58',
+                            500: '#ffd700',
+                            600: '#e6c200'
+                        },
+                        sunset: {
+                            400: '#ff7e5f',
+                            500: '#ff6b4a',
+                            600: '#e65c42'
+                        },
+                        deepblue: {
+                            400: '#4169e1',
+                            500: '#3a5fcd',
+                            600: '#3457b5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #8a2be2;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .dark .nav-link::after {
+            background-color: #ffd700;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-electric-500 dark:text-electric-400" id="logo-link">Ajay Kumar</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link">About Me</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#tools" class="nav-link">Tools I Use</a>
+                    <a href="#projects" class="nav-link">Projects I've Done</a>
+                    <a href="#testimonials" class="nav-link">What Clients Say</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#contact" class="nav-link">Contact Me</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-gray-600 dark:text-gray-300">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hs-collapse hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700">My Work Results</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700">Experience</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700">Skills</a>
+                <a href="#tools" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700">Tools I Use</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700">Projects I've Done</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700">What Clients Say</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700">Education</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-16 bg-gradient-to-br from-deepblue-500 to-electric-500 text-white" id="about">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Turning <span class="text-mustard-500">Ad Spend</span> Into <span class="text-mustard-500">Revenue</span></h1>
+                    <h2 class="text-2xl md:text-3xl text-white/80 mb-6">Performance Marketing Manager | 4.2x ROAS Specialist</h2>
+                    <p class="text-lg text-white/80 mb-8 max-w-lg">I architect data-driven campaigns that convert. With ₹15L/month in managed ad spend, I specialize in scaling profitable customer acquisition through precision targeting and conversion optimization.</p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="bg-mustard-500 hover:bg-mustard-600 text-deepblue-500 px-6 py-3 rounded-lg font-medium transition-colors duration-300">See My Projects</a>
+                        <a href="#contact" class="border border-mustard-500 text-mustard-500 hover:bg-white/10 px-6 py-3 rounded-lg font-medium transition-colors duration-300">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Digital Marketing" 
+                         class="rounded-xl shadow-2xl border-4 border-white/20">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white dark:bg-gray-800 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="stat-card bg-gray-50 dark:bg-gray-700 p-6 rounded-xl text-center transition-all duration-300">
+                    <div class="text-4xl font-bold text-electric-500 mb-2 counter" data-target="15">0</div>
+                    <div class="text-gray-600 dark:text-gray-300">Lakhs/Month Ad Spend</div>
+                </div>
+                <div class="stat-card bg-gray-50 dark:bg-gray-700 p-6 rounded-xl text-center transition-all duration-300">
+                    <div class="text-4xl font-bold text-mustard-500 mb-2 counter" data-target="4.2">0</div>
+                    <div class="text-gray-600 dark:text-gray-300">Average ROAS</div>
+                </div>
+                <div class="stat-card bg-gray-50 dark:bg-gray-700 p-6 rounded-xl text-center transition-all duration-300">
+                    <div class="text-4xl font-bold text-sunset-500 mb-2 counter" data-target="120">0</div>
+                    <div class="text-gray-600 dark:text-gray-300">Campaigns Managed</div>
+                </div>
+                <div class="stat-card bg-gray-50 dark:bg-gray-700 p-6 rounded-xl text-center transition-all duration-300">
+                    <div class="text-4xl font-bold text-deepblue-500 mb-2 counter" data-target="3">0</div>
+                    <div class="text-gray-600 dark:text-gray-300">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-20 bg-gray-100 dark:bg-gray-700" id="experience">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">My Experience</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Professional journey with key milestones and achievements</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-8">
+                    <div class="relative pl-8 border-l-2 border-electric-500">
+                        <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-electric-500"></div>
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold mb-1">Performance Marketing Manager</h3>
+                            <p class="text-sunset-500 mb-2">XYZ Company | Jan 2021 - Present</p>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
+                                <li>Managed ₹15L/month ad spend across Google, Meta, and programmatic platforms</li>
+                                <li>Achieved consistent 4.2x ROAS through data-driven optimization</li>
+                                <li>Improved customer retention by 35% through lifecycle marketing automation</li>
+                                <li>Implemented GA4 tracking infrastructure for accurate attribution</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 border-l-2 border-mustard-500">
+                        <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-mustard-500"></div>
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold mb-1">Digital Marketing Specialist</h3>
+                            <p class="text-sunset-500 mb-2">ABC Agency | Jun 2019 - Dec 2020</p>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
+                                <li>Scaled lead generation campaigns from ₹2L to ₹8L/month budget</li>
+                                <li>Reduced CPL by 42% through landing page optimization</li>
+                                <li>Built automated reporting dashboards in Power BI</li>
+                                <li>Managed client relationships and quarterly business reviews</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-8 border-l-2 border-deepblue-500">
+                        <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-deepblue-500"></div>
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold mb-1">Marketing Intern</h3>
+                            <p class="text-sunset-500 mb-2">Startup Ventures | May 2018 - May 2019</p>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
+                                <li>Assisted in managing social media ad campaigns</li>
+                                <li>Conducted competitor analysis and market research</li>
+                                <li>Created content for blogs and social media</li>
+                                <li>Learned fundamentals of digital marketing analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20" id="skills">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">My Skills</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Core competencies that drive campaign success</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-t-4 border-electric-500">
+                    <h3 class="text-xl font-bold mb-3">Paid Media Strategy</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-electric-500 mt-1 mr-2"></i>
+                            <span>Multi-channel campaign planning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-electric-500 mt-1 mr-2"></i>
+                            <span>Budget allocation & pacing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-electric-500 mt-1 mr-2"></i>
+                            <span>Bid strategy optimization</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-t-4 border-mustard-500">
+                    <h3 class="text-xl font-bold mb-3">Performance Analytics</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-mustard-500 mt-1 mr-2"></i>
+                            <span>ROAS & LTV analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-mustard-500 mt-1 mr-2"></i>
+                            <span>Attribution modeling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-mustard-500 mt-1 mr-2"></i>
+                            <span>Data visualization</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-t-4 border-sunset-500">
+                    <h3 class="text-xl font-bold mb-3">Conversion Optimization</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-sunset-500 mt-1 mr-2"></i>
+                            <span>Landing page testing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-sunset-500 mt-1 mr-2"></i>
+                            <span>Funnel analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-sunset-500 mt-1 mr-2"></i>
+                            <span>UX best practices</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-t-4 border-deepblue-500">
+                    <h3 class="text-xl font-bold mb-3">Marketing Automation</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-deepblue-500 mt-1 mr-2"></i>
+                            <span>Email/SMS workflows</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-deepblue-500 mt-1 mr-2"></i>
+                            <span>Retargeting sequences</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-deepblue-500 mt-1 mr-2"></i>
+                            <span>CRM integration</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-t-4 border-electric-500">
+                    <h3 class="text-xl font-bold mb-3">Audience Development</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-electric-500 mt-1 mr-2"></i>
+                            <span>Lookalike modeling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-electric-500 mt-1 mr-2"></i>
+                            <span>Customer segmentation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-electric-500 mt-1 mr-2"></i>
+                            <span>Intent-based targeting</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-t-4 border-mustard-500">
+                    <h3 class="text-xl font-bold mb-3">Technical Implementation</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-mustard-500 mt-1 mr-2"></i>
+                            <span>Tracking setup (GTM)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-mustard-500 mt-1 mr-2"></i>
+                            <span>Conversion API integration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-mustard-500 mt-1 mr-2"></i>
+                            <span>Pixel implementation</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="py-20 bg-gray-100 dark:bg-gray-700" id="tools">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Tools I Use</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Technologies and platforms that power my campaigns</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="tool-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg border-l-4 border-electric-500">
+                    <div class="flex flex-col items-center text-center">
+                        <i class="fab fa-google text-electric-500 text-4xl mb-4"></i>
+                        <h3 class="text-lg font-medium">Google Ads</h3>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Search, Display, Shopping, PMax</p>
+                    </div>
+                </div>
+                
+                <div class="tool-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg border-l-4 border-mustard-500">
+                    <div class="flex flex-col items-center text-center">
+                        <i class="fab fa-facebook text-mustard-500 text-4xl mb-4"></i>
+                        <h3 class="text-lg font-medium">Meta Ads</h3>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Facebook, Instagram, Audience Network</p>
+                    </div>
+                </div>
+                
+                <div class="tool-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg border-l-4 border-sunset-500">
+                    <div class="flex flex-col items-center text-center">
+                        <i class="fas fa-chart-pie text-sunset-500 text-4xl mb-4"></i>
+                        <h3 class="text-lg font-medium">Google Analytics</h3>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">GA4 implementation & analysis</p>
+                    </div>
+                </div>
+                
+                <div class="tool-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg border-l-4 border-deepblue-500">
+                    <div class="flex flex-col items-center text-center">
+                        <i class="fas fa-tags text-deepblue-500 text-4xl mb-4"></i>
+                        <h3 class="text-lg font-medium">Google Tag Manager</h3>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Tracking implementation</p>
+                    </div>
+                </div>
+                
+                <div class="tool-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg border-l-4 border-electric-500">
+                    <div class="flex flex-col items-center text-center">
+                        <i class="fas fa-chart-bar text-electric-500 text-4xl mb-4"></i>
+                        <h3 class="text-lg font-medium">Google Search Console</h3>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Analyse Website Performance</p>
+                    </div>
+                </div>
+                
+                <div class="tool-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg border-l-4 border-mustard-500">
+                    <div class="flex flex-col items-center text-center">
+                        <i class="fas fa-robot text-mustard-500 text-4xl mb-4"></i>
+                        <h3 class="text-lg font-medium">WebEngage</h3>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Marketing automation</p>
+                    </div>
+                </div>
+                
+                <div class="tool-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg border-l-4 border-sunset-500">
+                    <div class="flex flex-col items-center text-center">
+                        <i class="fas fa-funnel-dollar text-sunset-500 text-4xl mb-4"></i>
+                        <h3 class="text-lg font-medium">Social Media Tools</h3>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">For Handling Different Social media</p>
+                    </div>
+                </div>
+                
+                <div class="tool-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg border-l-4 border-deepblue-500">
+                    <div class="flex flex-col items-center text-center">
+                        <i class="fas fa-shopping-cart text-deepblue-500 text-4xl mb-4"></i>
+                        <h3 class="text-lg font-medium">Wordpress</h3>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Developing websied & Custome Landing Pages</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-20" id="projects">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Projects I've Done</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Campaigns that delivered measurable business impact</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="BobtheBuilder Campaign" 
+                             class="w-full h-full object-cover">
+                        <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">BobtheBuilder</h3>
+                                <p class="text-white/80">Home Services Lead Gen</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold">BobtheBuilder</h3>
+                                <p class="text-sunset-500">Home Services Lead Gen</p>
+                            </div>
+                            <span class="bg-electric-500/10 text-electric-500 px-3 py-1 rounded-full text-sm">Google Ads</span>
+                        </div>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-rupee-sign text-mustard-500 mt-1 mr-2"></i>
+                                <span>₹250 CPL (35% below industry avg)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-bolt text-mustard-500 mt-1 mr-2"></i>
+                                <span>1,200+ qualified leads/month</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chart-line text-mustard-500 mt-1 mr-2"></i>
+                                <span>5.1x ROAS on service bookings</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Hostgrabber Campaign" 
+                             class="w-full h-full object-cover">
+                        <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Hostgrabber</h3>
+                                <p class="text-white/80">Web Hosting Affiliate</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold">Hostgrabber</h3>
+                                <p class="text-sunset-500">Web Hosting Affiliate</p>
+                            </div>
+                            <span class="bg-mustard-500/10 text-mustard-500 px-3 py-1 rounded-full text-sm">Meta Ads</span>
+                        </div>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-rupee-sign text-mustard-500 mt-1 mr-2"></i>
+                                <span>₹8L/month ad spend at 3.8x ROAS</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-bolt text-mustard-500 mt-1 mr-2"></i>
+                                <span>650+ signups/month</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chart-line text-mustard-500 mt-1 mr-2"></i>
+                                <span>22% conversion rate (industry avg 12%)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Mahakal Premium Travel" 
+                             class="w-full h-full object-cover">
+                        <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Mahakal Premium Travel</h3>
+                                <p class="text-white/80">Luxury Travel Packages</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold">Mahakal Premium Travel</h3>
+                                <p class="text-sunset-500">Luxury Travel Packages</p>
+                            </div>
+                            <span class="bg-deepblue-500/10 text-deepblue-500 px-3 py-1 rounded-full text-sm">Omnichannel</span>
+                        </div>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-rupee-sign text-mustard-500 mt-1 mr-2"></i>
+                                <span>₹12L/month ad spend at 4.5x ROAS</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-bolt text-mustard-500 mt-1 mr-2"></i>
+                                <span>90+ premium bookings/month</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chart-line text-mustard-500 mt-1 mr-2"></i>
+                                <span>28% repeat customer rate</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-100 dark:bg-gray-700" id="testimonials">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">What Clients Say</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Feedback from brands I've worked with</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Rahul Sharma</h4>
+                            <p class="text-sm text-sunset-500">CEO, BobtheBuilder</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600 dark:text-gray-300 mb-4">
+                        "Ajay transformed our lead generation efforts. We went from inconsistent lead flow to 1,200+ qualified leads/month at a CPL 35% below industry average. His data-driven approach to campaign optimization is exceptional."
+                    </div>
+                    <div class="flex items-center">
+                        <div class="flex text-mustard-500 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <a href="#" class="text-sm text-electric-500 hover:underline">View on LinkedIn</a>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Priya Patel</h4>
+                            <p class="text-sm text-sunset-500">Marketing Director, Hostgrabber</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600 dark:text-gray-300 mb-4">
+                        "Working with Ajay was a game-changer for our affiliate program. He scaled our ad spend to ₹8L/month while maintaining a 3.8x ROAS. His understanding of audience segmentation and creative testing is unparalleled."
+                    </div>
+                    <div class="flex items-center">
+                        <div class="flex text-mustard-500 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <a href="#" class="text-sm text-electric-500 hover:underline">View on LinkedIn</a>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Vikram Singh</h4>
+                            <p class="text-sm text-sunset-500">Founder, Mahakal Premium Travel</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600 dark:text-gray-300 mb-4">
+                        "Ajay's work on our luxury travel packages delivered a 4.5x ROAS on ₹12L/month ad spend. His ability to target high-value customers and optimize our booking funnel resulted in a 28% repeat customer rate."
+                    </div>
+                    <div class="flex items-center">
+                        <div class="flex text-mustard-500 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <a href="#" class="text-sm text-electric-500 hover:underline">View on LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-20" id="education">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">My Education</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Academic background and certifications</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+                <div class="space-y-8">
+                    <div class="flex items-start">
+                        <div class="bg-electric-500/10 p-3 rounded-lg mr-6">
+                            <i class="fas fa-graduation-cap text-electric-500 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">MBA in Digital Marketing</h3>
+                            <p class="text-sunset-500 mb-2">University of Mumbai | 2018-2020</p>
+                            <p class="text-gray-600 dark:text-gray-300">Specialized in digital marketing strategies, consumer behavior, and data analytics.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-mustard-500/10 p-3 rounded-lg mr-6">
+                            <i class="fas fa-certificate text-mustard-500 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">Google Ads Certification</h3>
+                            <p class="text-sunset-500 mb-2">Google | 2021</p>
+                            <p class="text-gray-600 dark:text-gray-300">Certified in Search, Display, Video, and Shopping advertising.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-deepblue-500/10 p-3 rounded-lg mr-6">
+                            <i class="fas fa-certificate text-deepblue-500 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">Google Analytics Certification</h3>
+                            <p class="text-sunset-500 mb-2">Google | 2022</p>
+                            <p class="text-gray-600 dark:text-gray-300">Expertise in GA4 implementation and data analysis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-gradient-to-br from-deepblue-500 to-electric-500 text-white" id="contact">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
+                <p class="text-lg text-white/80 max-w-2xl mx-auto">Let's discuss how we can work together</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Get in Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-white/10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-mustard-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <a href="mailto:ajay@example.com" class="text-white/80 hover:text-white">ajay@example.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-white/10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-phone-alt text-mustard-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Phone</h4>
+                                <a href="tel:+919876543210" class="text-white/80 hover:text-white">+91 98765 43210</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-white/10 p-3 rounded-lg mr-4">
+                                <i class="fab fa-linkedin-in text-mustard-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">LinkedIn</h4>
+                                <a href="https://linkedin.com/in/ajaykumar" target="_blank" class="text-white/80 hover:text-white">linkedin.com/in/ajaykumar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-mustard-500 placeholder-white/50" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-mustard-500 placeholder-white/50" placeholder="Your email">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-mustard-500 placeholder-white/50" placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="bg-mustard-500 hover:bg-mustard-600 text-deepblue-500 px-6 py-3 rounded-lg font-medium transition-colors duration-300 w-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-800 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-xl font-bold text-electric-400">Ajay Kumar</a>
+                    <p class="mt-2">Performance Marketing Specialist</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center md:text-left">
+                <p>&copy; 2023 Ajay Kumar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // Start counter animation when stats section is in view
+        const statsSection = document.querySelector('section.bg-white');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(statsSection);
+
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', function() {
+                document.documentElement.classList.toggle('dark');
+                localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+            });
+        }
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.documentElement.classList.add('dark');
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+
+        contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = {
+         name: this.name.value,
+         email: this.email.value,
+        message: this.message.value
+        };
+
+        fetch('https://script.google.com/macros/s/AKfycbz3lCnc9ik5MLn_5CQLEdVYfGkASvZkmuenVk5IEtBcNvhDcZmRcTNEvGjY9MCI8DvZ/exec', {
+          method: 'POST',
+             body: JSON.stringify(formData),
+            headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => res.json())
+    .then(data => {
+      alert("Thank you! Your response has been recorded.");
+      this.reset();
+    })
+    .catch(err => {
+      alert("Something went wrong. Try again later.");
+      console.error(err);
+    });
+  });
+        
+    </script>
+</body>
+</html>
